@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
 import { BiSolidAddToQueue } from 'react-icons/bi';
+import '../assets/css/addbook.css';
 
-const InputTodo = ({ addTodoItem }) => {
+const AddBook = ({ addBook }) => {
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [emptyTodoWarning, setEmptyTodoWarning] =useState('');
@@ -20,7 +21,7 @@ const InputTodo = ({ addTodoItem }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim() && tag.trim()) {
-      addTodoItem(title, tag);
+      addBook(title, tag);
       setTitle('');
       setTag('');
       setEmptyTodoWarning('');
@@ -30,34 +31,29 @@ const InputTodo = ({ addTodoItem }) => {
   };
 
   return (
-    <>
+    <div className='add-book-wrapper'>
+      <p className='add-book-title'>Add new book</p>
       <form onSubmit={handleSubmit} className='add-todo'>
         <input
           type="text"
-          placeholder="Add Problem"
+          placeholder="Book title"
           value={title}
           onChange={handleTitle}
-          className='add-todo-title'
+          className='add-book-title'
         />
-        <span className='add-todo-title-example'>
-          Example problem: 'Get the sum of all numbers upto the input value'
-        </span>
         <input
           type="text"
-          placeholder="Add Tag"
+          placeholder="Category"
           value={tag}
           onChange={handleTag}
-          className='add-todo-tag'
+          className='add-book-category'
         />
-        <span className='add-todo-tag-example'>
-          Example tag: 'Recursion'
-        </span>
-        <button className='add-todo-submit'>
-          <BiSolidAddToQueue />
+        <button className='add-book-submit button-color'>
+          Add Book
         </button>
       </form>
       <span className='empty-field-warning'>{ emptyTodoWarning }</span>
-    </>
+    </div>
   );
 };
-export default InputTodo;
+export default AddBook;

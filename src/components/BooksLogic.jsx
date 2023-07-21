@@ -1,34 +1,28 @@
 import { useState } from "react";
-import InputTodo from "./InputTodo";
-import TodosList from "./TodosList";
+import AddBook from "./AddBook";
+import BookList from "./BookList";
 import { v4 as uuidv4 } from "uuid";
 
-const TodosLogic = () => {
+const BooksLogic = () => {
   const [todos, setTodos] = useState(
     [
       {
         id: uuidv4(),
-        title: "Update all elements of an array with it's data type",
-        tag: 'Array',
-        completed: false,
+        name: "The Hunger Games",
+        author: 'Suzanne Collins',
+        category: 'Action',
       },
       {
         id: uuidv4(),
-        title: 'Develop a function to get all key of object properties',
-        tag: 'Object',
-        completed: false,
+        name: 'Dune',
+        author: 'Frank Herbert',
+        category: 'Science Fiction',
       },
       {
         id: uuidv4(),
-        title: 'Create a function to calculate 2 numbers with data type chekcing',
-        tag: 'Arrithmetic',
-        completed: false,
-      },
-      {
-        id: uuidv4(),
-        title: 'Calculate the foctorial of a given input',
-        tag: 'Loop',
-        completed: false,
+        name: 'Capital in the Twenty-First Century',
+        author: 'Suzanne Collins',
+        category: 'Economy',
       },
     ]
   )
@@ -68,27 +62,26 @@ const TodosLogic = () => {
   };
   
 
-  const addTodoItem = (title, tag) => {
+  const addBook = (title, tag) => {
     console.log('Adding todo ...')
     const newTodo = {
       id: uuidv4(),
-      title: title,
-      tag: tag,
-      completed: false,
+      name: title,
+      category: tag,
     };
     setTodos([...todos, newTodo]);
   }
 
   return (
     <div>
-      <InputTodo addTodoItem={addTodoItem} />
-      <TodosList 
+      <BookList 
         todosProps={todos} 
         handleChange={handleChange} 
         delTodo={delTodo} 
         updateTodo={updateTodo}
       />
+      <AddBook addBook={addBook} />
     </div>
   )
 }
-export default TodosLogic;
+export default BooksLogic;

@@ -1,11 +1,10 @@
-import Navbar from './Navbar';
 import Header from './Header';
-import TodosLogic from './TodosLogic';
+import TodosLogic from './BooksLogic';
 import { Outlet } from 'react-router-dom';
 const Layout = () => {
   return (
     <div className="wrapper">
-      <Navbar />
+      <Header />
       <Outlet />
     </div>
   );

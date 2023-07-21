@@ -1,10 +1,10 @@
-import TodoItem from "./TodoItem";
+import SingleBook from "./SingleBook";
 
-const TodosList = ({ todosProps, handleChange, delTodo, updateTodo }) => {
+const BookList = ({ todosProps, handleChange, delTodo, updateTodo }) => {
   return (
     <ul className="single-todo-ul">
       {todosProps.map((todo) => (
-        <TodoItem 
+        <SingleBook 
           key={todo.id} 
           itemProp={todo} 
           handleChange={handleChange} 
@@ -15,4 +15,4 @@ const TodosList = ({ todosProps, handleChange, delTodo, updateTodo }) => {
     </ul>
   );
 };
-export default TodosList;
+export default BookList;

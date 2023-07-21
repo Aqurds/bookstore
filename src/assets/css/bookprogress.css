@@ -1,0 +1,19 @@
+.book-progress-wrapper {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-param {
+  font-size: 38px;
+}
+
+.progress-bar-wrapper {
+  margin-top: 7px;
+  margin-right: 10px;
+}
+
+.progress-bar {
+  width: 80px;
+}

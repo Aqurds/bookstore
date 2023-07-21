@@ -1,13 +1,12 @@
 import Header from "../components/Header";
-import TodosLogic from "../components/TodosLogic";
+import TodosLogic from "../components/BooksLogic";
 import Navbar from "../components/Navbar";
 
-const Home = () => {
+const Book = () => {
   return (
     <>
-      <Header />
       <TodosLogic />
     </>
   );
 };
-export default Home;
+export default Book;
