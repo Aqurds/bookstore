@@ -1,4 +1,6 @@
-import { BsFillBoxFill } from 'react-icons/bs';
+import { BsBookFill } from 'react-icons/bs';
+import { BiSolidUser } from 'react-icons/bi';
+import '../assets/css/header.css';
 
 const links = [
   { path: '/', text: 'Books' },
@@ -8,8 +10,8 @@ const links = [
 const Navbar = () => {
   return (
     <div className="nav-wrapper">
-      <div>
-        <BsFillBoxFill className='logo-main' />
+      <div className='nav-logo'>
+        <BsBookFill className='logo-main' />
         <h1 className='logo-main-text'>BookStore</h1>
       </div>
       <nav className="navbar">
@@ -23,6 +25,9 @@ const Navbar = () => {
           })}
         </ul>
       </nav>
+      <div className='user-wrapper'>
+          <BiSolidUser className='user-icon'/>
+      </div>
     </div>
   );  
 };

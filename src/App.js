@@ -1,10 +1,10 @@
-import TodoApp from './components/TodoApp';
+import BookMainComp from './components/BookMainComp';
 import './App.css';
 
 function App() {
   return (
    <>
-    <TodoApp />
+    <BookMainComp />
    </>
   )
 }

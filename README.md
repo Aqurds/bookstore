@@ -1,10 +1,10 @@
 <a name="readme-top"></a>
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="./src/assets//logo.png" alt="logo" width="140"  height="auto" />
+  <img src="./src/assets/logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Ds-Algo Track</b></h3>
+  <h3><b>BookStore</b></h3>
 
 </div>
 
@@ -31,10 +31,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Ds-Algo Track <a name="about-project"></a>
+# 📖 BookStore <a name="about-project"></a>
 
 
-**Ds-Algo Track** is an application to track solving coding challenge with categorized fashion. There will be a problem from each category of data structures & algorithm each day. The system will track is it solved or not.
+**BookStore** The app for organizing personal book list. Add, remove & track reading progress, bookmark are some key features in this application.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -57,9 +57,9 @@
 ### Key Features <a name="key-features"></a>
 
 
-- **Add coding problem with category**
-- **Edit coding problem**
-- **Delete coding problem**
+- **Add book**
+- **Add book category**
+- **Delete book**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,8 +100,8 @@ Clone this repository to your desired folder:
 
 
 ```
-  git https://github.com/Aqurds/ds-algo-track
-  cd ds-algo-track
+  git https://github.com/Aqurds/bookstore
+  cd bookstore
 ```
 
 ### Install
@@ -132,9 +132,9 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Add 24hours time tracking to solve 4 or custom limit problem**
-- **Show history of previous problem**
-- **User dashboard**
+- **Add tracking of reading progress**
+- **Bookmark book chapter**
+- **User history of reading**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,7 +144,7 @@ Clone this repository to your desired folder:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Aqurds/ds-algo-track/issues).
+Feel free to check the [issues page](https://github.com/Aqurds/bookstore/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

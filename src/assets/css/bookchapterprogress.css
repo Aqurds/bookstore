@@ -1,0 +1,23 @@
+.book-chapter-progress {
+  width: 30%;
+}
+
+.current-chapter {
+  color: #cbcbcb;
+}
+
+.chapter-name {
+  color: #000;
+  margin-top: -12px;
+}
+
+.update-chapter {
+  background: #0290ff;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

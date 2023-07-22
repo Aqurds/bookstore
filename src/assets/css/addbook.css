@@ -1,0 +1,49 @@
+.add-book-wrapper {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.add-book-title {
+  color: #959595;
+  font-weight: 700;
+  font-size: 34px;
+  width: 40%;
+}
+
+.add-todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.add-todo input {
+  background: #fff;
+  list-style-type: none;
+  padding: 20px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+  margin-right: 20px;
+  font-size: 18px;
+  outline: none;
+  font-weight: 900;
+}
+
+.add-book-category {
+  width: 40%;
+}
+
+.add-book-submit {
+  width: 20%;
+  padding: 0px 50px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.button-color {
+  background: #0290ff;
+  color: white;
+  font-weight: 900;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
