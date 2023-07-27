@@ -4,8 +4,11 @@ import { AiFillEdit } from 'react-icons/ai'
 import '../assets/css/singlebook.css';
 import BookProgress from "./BookProgress";
 import BookChapterProgress from "./BookChapterProgress";
+import { useDispatch } from "react-redux";
+import { removeBook } from "../redux/books/booksSlice";
 
-const SingleBook = ({ itemProp, handleChange, delTodo, updateTodo }) => {
+const SingleBook = ({ itemProp }) => {
+  const dispatch = useDispatch();
 
   return (
     <li className="single-book-li">
@@ -15,7 +18,7 @@ const SingleBook = ({ itemProp, handleChange, delTodo, updateTodo }) => {
             {itemProp.category}
           </p>
           <p className="book-name">
-            {itemProp.name}
+            {itemProp.title}
           </p>
         </div>
         <div className="single-todo-operation">
@@ -24,7 +27,7 @@ const SingleBook = ({ itemProp, handleChange, delTodo, updateTodo }) => {
           </p>
           <div>
             <button className="button-generic border-right">Comments</button>
-            <button className="single-todo-del button-generic border-right" onClick={() => delTodo(itemProp.id)}>
+            <button className="single-todo-del button-generic border-right" onClick={() => dispatch(removeBook(itemProp.id))}>
               Remote
             </button>
             <button className="button-generic">

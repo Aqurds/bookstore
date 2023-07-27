@@ -1,5 +1,6 @@
 .book-progress-wrapper {
   width: 30%;
+  padding-right: 30px;
   display: flex;
   justify-content: center;
   align-items: center;

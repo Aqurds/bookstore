@@ -1,6 +1,7 @@
 .add-book-wrapper {
   padding-left: 50px;
   padding-right: 50px;
+  text-align: center;
 }
 
 .add-book-title {
@@ -8,6 +9,7 @@
   font-weight: 700;
   font-size: 34px;
   width: 40%;
+  text-align: left;
 }
 
 .add-todo {
@@ -27,6 +29,7 @@
   font-size: 18px;
   outline: none;
   font-weight: 900;
+  color: black;
 }
 
 .add-book-category {
@@ -46,4 +49,11 @@
   font-size: 18px;
   border: none;
   outline: none;
+}
+
+.empty-field-warning {
+  position: relative;
+  top: -70px;
+  color: tomato;
+  font-weight: 700;
 }
