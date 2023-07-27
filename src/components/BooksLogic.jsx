@@ -2,6 +2,8 @@ import { useState } from "react";
 import AddBook from "./AddBook";
 import BookList from "./BookList";
 import { v4 as uuidv4 } from "uuid";
+import { useSelector, useDispatch } from "react-redux";
+import { addBook, removeBook } from "../redux/books/booksSlice";
 
 const BooksLogic = () => {
   const [todos, setTodos] = useState(
@@ -26,6 +28,9 @@ const BooksLogic = () => {
       },
     ]
   )
+
+  const books = useSelector(state => state.books.books);
+  const dispatch = useDispatch();
 
   const handleChange = (id) => {
     setTodos((prevState) =>
@@ -75,9 +80,9 @@ const BooksLogic = () => {
   return (
     <div>
       <BookList 
-        todosProps={todos} 
+        todosProps={books} 
         handleChange={handleChange} 
-        delTodo={delTodo} 
+        delTodo={addBook} 
         updateTodo={updateTodo}
       />
       <AddBook addBook={addBook} />

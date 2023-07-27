@@ -15,7 +15,7 @@ const SingleBook = ({ itemProp, handleChange, delTodo, updateTodo }) => {
             {itemProp.category}
           </p>
           <p className="book-name">
-            {itemProp.name}
+            {itemProp.title}
           </p>
         </div>
         <div className="single-todo-operation">

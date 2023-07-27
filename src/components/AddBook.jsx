@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { FaPlusCircle } from 'react-icons/fa';
 import { BiSolidAddToQueue } from 'react-icons/bi';
 import '../assets/css/addbook.css';
+import { useDispatch } from 'react-redux';
 
 const AddBook = ({ addBook }) => {
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [emptyTodoWarning, setEmptyTodoWarning] =useState('');
+  const dispatch = useDispatch();
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -21,7 +23,13 @@ const AddBook = ({ addBook }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim() && tag.trim()) {
-      addBook(title, tag);
+      dispatch(addBook({
+        item_id: 'item_id',
+        title: title, 
+        category: tag,
+        author: 'John doe'
+      }
+      ));
       setTitle('');
       setTag('');
       setEmptyTodoWarning('');
