@@ -3,8 +3,10 @@ import { FaPlusCircle } from 'react-icons/fa';
 import { BiSolidAddToQueue } from 'react-icons/bi';
 import '../assets/css/addbook.css';
 import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
+import { v4 as uuidv4 } from "uuid";
 
-const AddBook = ({ addBook }) => {
+const AddBook = () => {
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [emptyTodoWarning, setEmptyTodoWarning] =useState('');
@@ -20,28 +22,29 @@ const AddBook = ({ addBook }) => {
     setEmptyTodoWarning('');
   };
 
-  const handleSubmit = (e) => {
+  const hangleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim() && tag.trim()) {
-      dispatch(addBook({
-        item_id: 'item_id',
-        title: title, 
-        category: tag,
-        author: 'John doe'
-      }
-      ));
-      setTitle('');
-      setTag('');
-      setEmptyTodoWarning('');
-    } else {
-      setEmptyTodoWarning("Empty filed not allowed!")
+    if (!title || !tag) {
+      setEmptyTodoWarning("Fields can not be empty!");
+      return;
     }
-  };
+    dispatch(
+      addBook(
+        {
+          id: uuidv4(), 
+          title: title, 
+          author: 'author'
+        }
+      )
+    );
+    setTag('');
+    setTitle('');
+  }
 
   return (
     <div className='add-book-wrapper'>
       <p className='add-book-title'>Add new book</p>
-      <form onSubmit={handleSubmit} className='add-todo'>
+      <form onSubmit={hangleSubmit} className='add-todo'>
         <input
           type="text"
           placeholder="Book title"
