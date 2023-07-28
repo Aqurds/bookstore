@@ -24,6 +24,11 @@
   margin-right: 16px;
   cursor: pointer;
   padding-right: 16px;
+  transition: all .3s;
+}
+
+.button-generic:hover {
+  color: #6ca0cd;
 }
 
 .category-button {

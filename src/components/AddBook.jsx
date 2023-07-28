@@ -5,26 +5,38 @@ import '../assets/css/addbook.css';
 import { useDispatch } from 'react-redux';
 import { addBook, addTheBook } from '../redux/books/booksSlice';
 import { v4 as uuidv4 } from "uuid";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
-  const [tag, setTag] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
   const [emptyTodoWarning, setEmptyTodoWarning] =useState('');
   const dispatch = useDispatch();
+
+  const options = [
+    'Mystery', 'Thriller', 'Fantasy', 'Science Fiction', 'Historical Fiction'
+  ];
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
     setEmptyTodoWarning('');
   };
 
-  const handleTag = (e) => {
-    setTag(e.target.value);
+  const handleCategory = (e) => {
+    setCategory(e.value);
     setEmptyTodoWarning('');
   };
 
+  const handleAuthor = (e) => {
+    setAuthor(e.target.value);
+    setEmptyTodoWarning('');
+  }
+
   const hangleSubmit = (e) => {
     e.preventDefault();
-    if (!title || !tag) {
+    if (!title || !category || !author) {
       setEmptyTodoWarning("Fields can not be empty!");
       return;
     }
@@ -33,13 +45,14 @@ const AddBook = () => {
         {
           item_id: uuidv4(), 
           title: title, 
-          author: 'author',
-          category: 'category',
+          author: author,
+          category: category,
         }
       )
     );
-    setTag('');
+    setCategory('');
     setTitle('');
+    setAuthor('');
   }
 
   return (
@@ -55,10 +68,16 @@ const AddBook = () => {
         />
         <input
           type="text"
-          placeholder="Category"
-          value={tag}
-          onChange={handleTag}
+          placeholder="Author"
+          value={author}
+          onChange={handleAuthor}
+          className='add-book-author'
+        />
+        <Dropdown 
           className='add-book-category'
+          options={options}
+          placeholder="Select a category"
+          onChange={handleCategory}
         />
         <button className='add-book-submit button-color'>
           Add Book
