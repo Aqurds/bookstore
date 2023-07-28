@@ -5,7 +5,7 @@ import '../assets/css/singlebook.css';
 import BookProgress from "./BookProgress";
 import BookChapterProgress from "./BookChapterProgress";
 import { useDispatch } from "react-redux";
-import { removeBook } from "../redux/books/booksSlice";
+import { removeBook, deleteTheBook } from "../redux/books/booksSlice";
 
 const SingleBook = ({ itemProp }) => {
   const dispatch = useDispatch();
@@ -27,8 +27,8 @@ const SingleBook = ({ itemProp }) => {
           </p>
           <div>
             <button className="button-generic border-right">Comments</button>
-            <button className="single-todo-del button-generic border-right" onClick={() => dispatch(removeBook(itemProp.id))}>
-              Remote
+            <button className="single-todo-del button-generic border-right" onClick={() => dispatch(deleteTheBook(itemProp.id))}>
+              Remove
             </button>
             <button className="button-generic">
               Edit

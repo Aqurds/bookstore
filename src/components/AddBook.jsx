@@ -3,7 +3,7 @@ import { FaPlusCircle } from 'react-icons/fa';
 import { BiSolidAddToQueue } from 'react-icons/bi';
 import '../assets/css/addbook.css';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { addBook, addTheBook } from '../redux/books/booksSlice';
 import { v4 as uuidv4 } from "uuid";
 
 const AddBook = () => {
@@ -29,11 +29,16 @@ const AddBook = () => {
       return;
     }
     dispatch(
-      addBook(
+      addTheBook(
         {
-          id: uuidv4(), 
+          item_id: uuidv4(), 
           title: title, 
-          author: 'author'
+          author: 'author',
+          category: 'category',
+          // uuidv4,
+          // title,
+          // 'author',
+          // 'category',
         }
       )
     );
