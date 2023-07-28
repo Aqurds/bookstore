@@ -20,4 +20,9 @@
   outline: none;
   padding: 5px 10px;
   cursor: pointer;
+  transition: all .3s;
+}
+
+.update-chapter:hover {
+  background: #006abd;
 }
