@@ -3,12 +3,10 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 const APPID = '1ZndMyOgnRMUYmlQAdZA';
-// const APPID = 'LQYGPUQgAZCQeGfRpgA8';
 const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${APPID}/books`;
 
 const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   const response = await axios.get(`${url}`);
-  console.log('book response', response.data)
   return response.data;
 });
 

@@ -13,7 +13,6 @@ const BooksLogic = () => {
 
   useEffect(() => {
     dispatch(fetchBooks())
-    console.log("fetched", books)
   }, [dispatch]);
 
   const bookItems = Object.entries(books).map(([id, books]) => {

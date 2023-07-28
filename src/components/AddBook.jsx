@@ -35,10 +35,6 @@ const AddBook = () => {
           title: title, 
           author: 'author',
           category: 'category',
-          // uuidv4,
-          // title,
-          // 'author',
-          // 'category',
         }
       )
     );
